@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+import showChildren from './show/children.js'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path:'/',
     name:'show',
-    component:()=>import('../views/show/index.vue')
+    component:()=>import('../views/show/index.vue'),
+    children:showChildren
   }
 ]
 

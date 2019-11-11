@@ -1,0 +1,19 @@
+.width-450{
+  width: 450px;
+}
+.frx{
+  display: flex;
+  flex-direction: row-reverse;
+}
+.mx-10{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.fxcc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,16 +1,31 @@
 <template>
-  <el-card>
-    <div ref="ref" style="width:500px;height:450px"></div>
+  <el-card class="width-450">
+    <div slot="header">
+      <el-row :gutter="24">
+        <el-col :span="12">
+          <strong>XXX影评</strong>
+        </el-col>
+        <el-col :span="12" class="frx">
+          <el-button type="primary" size="mini" @click="gotoDetail">详情</el-button>
+        </el-col>
+      </el-row>
+      
+    </div>
+    <div ref="ref" style="width:420px;height:400px"></div>
   </el-card>
 </template>
 
 <script>
+//这些需要修改。
 const echarts = require("echarts");
 export default {
+  props:{
+    color:String,
+  },
   data() {
     return {
       option: {
-        color: ["#3398DB"],
+        color: [this.color?this.color:"#3398DB"],
         tooltip: {
           trigger: "axis",
           axisPointer: {
@@ -52,9 +67,11 @@ export default {
   },
   methods: {
     initCharts() {
-      window.console.log(echarts);
       let chart = echarts.init(this.$refs.ref);
       chart.setOption(this.option);
+    },
+    gotoDetail(){
+      this.$router.push({name:'rankList'})
     }
   },
   mounted() {
