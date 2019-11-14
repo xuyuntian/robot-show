@@ -1,12 +1,14 @@
 const children = [
   {
-    path:'/rank-content',
+    path:'/rank-content/:commentId',
     name:'rankContent',
+    props:true,
     component:()=>import('../../views/show/children/rank-content.vue'),
   },
   {
-    path:'/rank-list',
+    path:'/rank-list/:typeId',
     name:'rankList',
+    props:true,
     component:()=>import('../../views/show/children/rank-list.vue'),
   },
   {

@@ -1,13 +1,18 @@
 <template>
-  <el-breadcrumb separator=">" style="height:60px">
-    <el-breadcrumb-item v-for="(item,index) in breadItems" :key="index" :to="mapRouter(index)">{{item}}</el-breadcrumb-item>
+  <el-breadcrumb separator=">" id="bread-style">
+    <el-breadcrumb-item
+      v-for="(item,index) in breadItems"
+      :key="index"
+      :to="mapRouter(index)"
+    >{{item}}</el-breadcrumb-item>
   </el-breadcrumb>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
-  props:{
-    curItem:Number,
+  props: {
+    curItem: Number
   },
   data() {
     return {
@@ -17,42 +22,57 @@ export default {
           name: "movieRank"
         },
         {
-          name: "rankList"
+          name: "rankList",
+          params: {
+            typeId: this.$store.state.typeId
+          }
         },
         {
-          name: "rank-content"
-        },
+          name: "rankContent"
+        }
       ],
-      currentRoutes:[
-        
-      ]  
+      currentRoutes: []
     };
   },
-  methods:{
-    changeCurrent(breadItem){
-      var x ;
+  computed: mapState(["typeId"]),
+  watch:{
+    typeId:function(val){
+      this.routes[1].params.typeId = val;
+    }
+  },
+  methods: {
+    changeCurrent(breadItem) {
+      var x;
       var temp = [];
-      if((x = this.breadItems.indexOf(breadItem)) === -1){
+      if ((x = this.breadItems.indexOf(breadItem)) === -1) {
         this.currentRoutes = temp;
-      }else{
-        for(let i = 0; i<= x; i++){
+      } else {
+        for (let i = 0; i <= x; i++) {
           temp.push(this.routes[i]);
         }
         this.currentRoutes = temp;
       }
     },
-    mapRouter(index){
-      if(this.currentRoutes.length > index){
+    mapRouter(index) {
+      if (this.currentRoutes.length - 1 > index) {
         return this.currentRoutes[index];
       }
       return null;
     }
   },
-  mounted(){
+  mounted() {
     this.changeCurrent(this.breadItems[this.curItem]);
   }
 };
 </script>
 
 <style>
+#bread-style {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #eaeaea6b;
+  width: 1200px;
+  padding-left: 60px;
+}
 </style>

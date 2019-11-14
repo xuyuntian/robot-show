@@ -94,7 +94,7 @@ export default {
       chart.setOption(this.option);
     },
     gotoDetail() {
-      this.$router.push({ name: "rankList" });
+      this.$router.push({ name: "rankList",params:{typeId:this.typeId}});
     }
   },
   mounted() {

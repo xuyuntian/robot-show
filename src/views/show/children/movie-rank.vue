@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="fyc w-full">
     <Bread :curItem="0"></Bread>
     <div id="charts-content">
       <MyCharts class="mx-10 mt-10" v-for="(item,index) in rankSouce" :key="index" v-bind="item" ></MyCharts>
