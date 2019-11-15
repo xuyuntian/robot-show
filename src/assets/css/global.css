@@ -20,6 +20,9 @@
 .w-middle{
   width: 1200px;
 }
+.w-large{
+  width: 1500px;
+}
 .fyc{
   display: flex;
   flex-direction: column;

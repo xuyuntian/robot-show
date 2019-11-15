@@ -8,6 +8,7 @@ import 'echarts'
 import './assets/css/global.css'
 Vue.config.productionTip = false
 Vue.prototype.dateString = parseDateString;
+Vue.prototype.parseTime = parseTime;
 new Vue({
   router,
   store,
@@ -23,4 +24,8 @@ function parseDateString(dateString){
   res += date[0];
   res+= (" "+date[1].split('.')[0]);
   return res;
+}
+function parseTime(dateString){
+  var date = new Date(dateString);
+  return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
 }

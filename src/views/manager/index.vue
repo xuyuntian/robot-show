@@ -32,12 +32,14 @@ export default {
         {
           index: "2",
           name: "影评统计",
-          route: {}
+          route: {name:"managerMovieRank"}
         },
         {
           index: "3",
           name: "任务管理",
-          route: {}
+          route: {
+            name:"task",
+          }
         },
         {
           index: "4",

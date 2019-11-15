@@ -9,7 +9,7 @@ var add = function (title) {
   return axios.post(path.add, { title: title });
 }
 var changeShow = function (id, status) {
-  return axios.put(this.changeShow, { id: id, status: status });
+  return axios.put(path.changeShow, { id: id, status: status });
 }
 var findAll = function(page,size){
   return axios.get(path.findAll,{params:{page:page,size:size}});
