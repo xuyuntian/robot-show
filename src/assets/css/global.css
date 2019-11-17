@@ -31,3 +31,7 @@
 .w-full{
   width: 100%;
 }
+.fxc{
+  display: flex;
+  align-items: center;
+}

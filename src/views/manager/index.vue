@@ -44,7 +44,9 @@ export default {
         {
           index: "4",
           name: "文档管理",
-          route: {}
+          route: {
+            name:"docList"
+          }
         },
         {
           index: "5",

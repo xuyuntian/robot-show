@@ -18,5 +18,11 @@ const children = [
     props:true,
     component:()=>import('../../views/manager/children/task.vue'),
   },
+  {
+    path: prefix+'/doc-list',
+    name:'docList',
+    props:true,
+    component:()=>import('../../views/manager/children/doc-list.vue'),
+  },
 ]
 export default children;

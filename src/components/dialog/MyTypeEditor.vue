@@ -6,7 +6,7 @@
         <el-input v-model="tempId" :disabled="true"></el-input>
       </el-col>
     </el-row>
-    <el-row class="mt-10">
+    <el-row class="mt-10" :gutter="24">
       <el-col :span="12"><label>名称</label> </el-col>
       <el-col :span="12">
         <el-input v-model="tempTitle"></el-input>
