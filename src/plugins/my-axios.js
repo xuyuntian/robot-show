@@ -7,7 +7,9 @@ import axios from "axios";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-  baseURL: "http://127.0.0.1:8088",
+  baseURL: "http://101.201.66.254/robot-back",
+  // baseURL: "http://localhost:8088",
+
   // timeout: 60 * 1000, // Timeout
   // withCredentials: true, // Check cross-site Access-Control
 };
@@ -17,6 +19,8 @@ const _axios = axios.create(config);
 _axios.interceptors.request.use(
   function(config) {
     // Do something before request is sent
+    var token = localStorage.getItem("token");
+    config.headers.Authorization = `Bearer ${token}}`
     return config;
   },
   function(error) {

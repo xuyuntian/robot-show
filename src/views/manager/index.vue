@@ -9,6 +9,7 @@
           :route="item.route"
         >{{item.name}}</el-menu-item>
       </el-menu>
+      <el-button type="primary" @click="logout">退出登录</el-button>
     </el-aside>
     <el-main class="w-middle">
       <router-view></router-view>
@@ -57,6 +58,15 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+    logout(){
+      localStorage.removeItem("token");
+      this.$router.push({name:"show"});
+    }
+  },
+  mounted(){
+    this.$router.push(this.menueItems[0].route);
   }
 };
 </script>
