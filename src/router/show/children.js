@@ -17,9 +17,9 @@ const children = [
     component:()=>import('../../views/show/children/movie-rank.vue'),
   },
   {
-    path:'/book-rank',
-    name:'bookRank',
-    component:()=>import('../../views/show/children/book-rank.vue'),
+    path:'/about',
+    name:'about',
+    component:()=>import('../../views/show/children/about.vue'),
   },
 ]
 export default children;

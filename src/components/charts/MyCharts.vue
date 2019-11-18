@@ -79,11 +79,12 @@ export default {
     //得到id后，直接重新初始化。
     id:function(){
       this.initCharts();
+      // window.console.log("id发生了变化,旧值为"+old+",新值为:"+val);
     }
   },
   methods: {
     initCharts() {
-      let chart = echarts.init(this.$refs.ref);
+      let chart = echarts.init(this.$refs["ref"]);
       this.option.series[0].data = [
         this.oneStar,
         this.twoStar,
@@ -98,7 +99,8 @@ export default {
     }
   },
   mounted() {
-    //不知为何，现在在mouted中无法获取props。
+    // window.console.log("主动调用");
+    this.initCharts();
   }
 };
 </script>

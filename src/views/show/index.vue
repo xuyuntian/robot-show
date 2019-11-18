@@ -35,12 +35,7 @@ export default {
         },
         {
           index: "2",
-          route: { name: "bookRank" },
-          text: "书评"
-        },
-        {
-          index: "3",
-          route: { name: "" },
+          route: { name: "about" },
           text: "关于该网站"
         }
       ]

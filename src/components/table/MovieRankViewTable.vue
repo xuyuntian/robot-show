@@ -1,5 +1,8 @@
 <template>
   <el-card class="w-large">
+    <div slot="header">
+      <el-button type="primary" @click="showCreate = true">统计</el-button>
+    </div>
     <el-table :data="rankRes">
       <el-table-column label="id" prop="id"></el-table-column>
       <el-table-column label="title" prop="title"></el-table-column>
@@ -23,19 +26,25 @@
       :page-size="size"
       @current-change="loadRankRes"
     ></el-pagination>
+    <CR :visible.sync="showCreate"></CR>
   </el-card>
 </template>
 
 <script>
 import rankViewApi from "../../api/rank-view-api";
+import CR from '../../components/dialog/CreateRank'
 export default {
   data() {
     return {
       page: 1,
       size: 16,
       total: 0,
-      rankRes: []
+      rankRes: [],
+      showCreate:false,
     };
+  },
+  components:{
+    CR,
   },
   methods: {
     loadRankRes() {

@@ -51,7 +51,9 @@ export default {
         {
           index: "5",
           name: "文档转换",
-          route: {}
+          route: {
+            name:"docParser"
+          }
         }
       ]
     };

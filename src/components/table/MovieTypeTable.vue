@@ -13,7 +13,7 @@
       <el-table-column label="操作">
         <template slot-scope="scope">
           <el-button type="primary" size="mini" @click="edit(scope.row.id,scope.row.title)">编辑</el-button>
-          <el-button type="danger" size="mini">删除</el-button>
+          <!-- <el-button type="danger" size="mini">删除</el-button> -->
           <el-button size="mini" @click="chageStatus(scope.row.id,scope.row.isShow)">切换状态</el-button>
         </template>
       </el-table-column>

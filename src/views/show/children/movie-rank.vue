@@ -17,6 +17,7 @@ export default {
     return {
       page:1,
       size:16,
+      total:0,
       rankSouce:[
         rankViewApi
       ]
@@ -29,6 +30,7 @@ export default {
   mounted(){
     rankViewApi.findRankView(this.page,this.size).then(res => {
       this.rankSouce = res.data.list;
+      this.total = res.data.total;
     })
   }
 };

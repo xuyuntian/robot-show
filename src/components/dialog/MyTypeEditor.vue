@@ -1,14 +1,14 @@
 <template>
   <el-dialog :title='id?"修改类型名称":"添加类型"' :visible.sync="show" width="450px">
-    <el-row v-if="id">
-      <el-col :span="12"><label>编号</label></el-col>
-      <el-col :span="12">
+    <el-row v-if="id" :gutter="24" class="fxc">
+      <el-col :span="8"><label>编号</label></el-col>
+      <el-col :span="16">
         <el-input v-model="tempId" :disabled="true"></el-input>
       </el-col>
     </el-row>
-    <el-row class="mt-10" :gutter="24">
-      <el-col :span="12"><label>名称</label> </el-col>
-      <el-col :span="12">
+    <el-row class="mt-10 fxc" :gutter="24">
+      <el-col :span="8"><label>名称</label> </el-col>
+      <el-col :span="16">
         <el-input v-model="tempTitle"></el-input>
       </el-col>
     </el-row>

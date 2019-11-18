@@ -1,10 +1,10 @@
 <template>
-  <el-dialog title="爬取评论详情" :visible.sync="show">
+  <el-dialog title="爬取评论详情" :visible.sync="show" width="450px">
     <el-row :gutter="24" class="mt-10">
       <el-col :span="6">
         <span>影评的编号</span>
       </el-col>
-      <el-col :span="12">
+      <el-col :span="18">
         <el-input v-model="typeId" placeholder="请输入影评的编号"></el-input>
       </el-col>
     </el-row>
@@ -12,7 +12,7 @@
       <el-col :span="6">
         <span>url前缀</span>
       </el-col>
-      <el-col :span="12">
+      <el-col :span="18">
         <el-input v-model="url" placeholder="请输入有效的URL"></el-input>
       </el-col>
     </el-row>

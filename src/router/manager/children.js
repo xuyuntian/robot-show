@@ -24,5 +24,11 @@ const children = [
     props:true,
     component:()=>import('../../views/manager/children/doc-list.vue'),
   },
+  {
+    path: prefix+'/doc-parser',
+    name:'docParser',
+    props:true,
+    component:()=>import('../../views/manager/children/doc-parser.vue'),
+  },
 ]
 export default children;
